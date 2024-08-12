@@ -6,7 +6,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Header = ({top, score, paused, pause, reload}) => {
 
-    const styeHeader ={
+    const styleHeader ={
         height: HEADER_HEIGHT + top,
         backgroundColer: colors.p4,
         paddingTop: top,
