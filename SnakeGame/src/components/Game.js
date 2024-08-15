@@ -42,6 +42,7 @@ const Game = () => {
         maxY: ROWS - 1,
     };
 
+
     function resetGame() {
         setSnake(SNAKE_START);
         setDirection(Direction.Rigth);
@@ -86,6 +87,9 @@ const Game = () => {
                 case Direction.Left:
                     head.x -= 1;
                     break;
+                case Direction.Down:
+                    head.y += 1;
+                    break;
                 case Direction.Up:
                     head.y -= 1;
                     break;
@@ -94,10 +98,6 @@ const Game = () => {
             }
             if (testGameOver(head)) {
                 setIsGameOver(true);
-                Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
-                return;
-            }
-            if (testEatsFood(head, food)) {
                 Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
                 return;
             }
@@ -120,8 +120,8 @@ const Game = () => {
             );
         }
 
-        function testEatsFood(snakeHead, foodLocations) {
-            return snakeHead.x == foodLocations.x && snakeHead.y == foodLocations.y;
+        function testEatsFood(snakeHead, foodLocation) {
+            return snakeHead.x == foodLocation.x && snakeHead.y == foodLocation.y;
         }
 
         function newFoodPosition() {

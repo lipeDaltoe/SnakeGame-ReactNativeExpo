@@ -6,9 +6,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Header = ({top, score, paused, pause, reload}) => {
 
-    const styleHeader ={
+    const styleHeader = {
         height: HEADER_HEIGHT + top,
-        backgroundColer: colors.p4,
+        backgroundColor: colors.p4,
         paddingTop: top,
         paddingHorizontal: 20,
 }
@@ -21,7 +21,7 @@ return (
         <TouchableOpacity onPress={pause}>
             <Ionicons
                 name={paused ? "play" : "pause"}
-                syze={26}
+                size={26}
                 color={colors.p6}
             /> 
         </TouchableOpacity>
